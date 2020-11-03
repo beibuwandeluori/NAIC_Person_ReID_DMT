@@ -195,3 +195,12 @@ def resnet152_ibn_a(last_stride, pretrained=False, **kwargs):
     if pretrained:
         model.load_state_dict(model_zoo.load_url(model_urls['resnet152']))
     return model
+
+
+if __name__ == '__main__':
+    model, image_size = resnet101_ibn_a(last_stride=1, pretrained=False), 224
+    model = model.to(torch.device('cpu'))
+    from torchsummary import summary
+    input_s = (3, image_size, image_size)
+    print(summary(model, input_s, device='cpu'))
+    pass

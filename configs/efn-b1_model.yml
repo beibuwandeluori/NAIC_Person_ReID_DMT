@@ -23,7 +23,7 @@ INPUT:
 
 DATASETS:
   NAMES: ('naic')
-  ROOT_DIR: ('/raid/chenby/person_rID')
+  ROOT_DIR: ('/raid/chenby/person_rID/2020')
   HARD_AUG: True
   ADD_2019: True
 
@@ -59,6 +59,6 @@ TEST:
   NECK_FEAT: 'after'
   FEAT_NORM: 'yes'
   FLIP_FEATS: 'on'
-OUTPUT_DIR: "output_B/efn-b1_add-2019_circle/"
+OUTPUT_DIR: "output_2/efn-b1_add-2019_circle/"
 
 

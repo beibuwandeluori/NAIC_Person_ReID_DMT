@@ -4,12 +4,12 @@ from collections import defaultdict
 
 
 class NAIC(BaseImageDataset):
-    def __init__(self, root='/raid/chenby/person_rID', verbose=True, add_2019=False):
+    def __init__(self, root='/raid/chenby/person_rID/2020', verbose=True, add_2019=False):
         super(NAIC, self).__init__()
         self.dataset_dir = root
         self.dataset_dir_train = osp.join(self.dataset_dir, 'train/images')
-        # self.dataset_dir_test = osp.join(self.dataset_dir, 'image_A')
-        self.dataset_dir_test = osp.join(self.dataset_dir, 'image_B')
+        self.dataset_dir_test = osp.join(self.dataset_dir, 'image_A')
+        # self.dataset_dir_test = osp.join(self.dataset_dir, 'image_B')
         self.len_pids = 0
         if add_2019:
             train = self._process_dir(self.dataset_dir_train, relabel=True) + \
@@ -40,7 +40,7 @@ class NAIC(BaseImageDataset):
 
     def _process_dir(self, data_dir, relabel=True):
         # filename = osp.join(data_dir, 'label.txt')
-        filename = '/raid/chenby/person_rID/train/label.txt'
+        filename = '/raid/chenby/person_rID/2020/train/label.txt'
         dataset = []
         camid = 1
         count_image=defaultdict(list)
